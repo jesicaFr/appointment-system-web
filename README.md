@@ -55,7 +55,7 @@ La aplicación consume la API del proyecto Appointment System Backend.
 * Validacion de turnos duplicados en base a fecha, hora y minutos
 * la cancelacion de turno se realiza haciendo doble click en el turno del calendario, el cual redirige al formulario para cambiar el estado a cancelado
 
-* Próximas mejoras
+## Próximas mejoras
 Login
 Validaciones avanzadas.
 Relacion medicos y paciente
