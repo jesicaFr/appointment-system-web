@@ -52,6 +52,7 @@ La aplicación consume la API del proyecto Appointment System Backend.
 * Gestión de turnos.
 * Consulta de disponibilidad a traves del calendario
 * Programación de citas y cancelcion de turnos.
+* Validacion de turnos duplicados en base a fecha, hora y minutos
 
 * Próximas mejoras
 Login
