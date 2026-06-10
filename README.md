@@ -56,10 +56,11 @@ La aplicación consume la API del proyecto Appointment System Backend.
 * la cancelacion de turno se realiza haciendo doble click en el turno del calendario, el cual redirige al formulario para cambiar el estado a cancelado
 
 ## Próximas mejoras
-Login
-Validaciones avanzadas.
-Relacion medicos y paciente
-Una vez obtenido los turnos poder ingresar unos minutos antes para la videollamada
+* Login
+* Validaciones avanzadas.
+* Relacion medicos y paciente
+* Menu de crear recetas y emitirla
+* Una vez obtenido los turnos poder ingresar unos minutos antes para la videollamada
 
 ## Autor
 
