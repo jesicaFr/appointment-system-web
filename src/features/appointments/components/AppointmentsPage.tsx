@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Box, Button, Flex, Heading, Stack, Text, VStack, HStack, Icon } from '@chakra-ui/react'
+import { Box, Button, Flex, Heading, Text, VStack, Icon } from '@chakra-ui/react'
 import { CalendarIcon, AddIcon, ArrowBackIcon } from '@chakra-ui/icons'
 import CalendarView from './CalendarView'
 import CreateAppointmentForm from './CreateAppointmentForm'

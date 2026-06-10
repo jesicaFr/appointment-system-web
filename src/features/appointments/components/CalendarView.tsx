@@ -5,8 +5,7 @@ import timeGridPlugin from '@fullcalendar/timegrid'
 import interactionPlugin from '@fullcalendar/interaction'
 import { useAppSelector } from '../../../store/hooks'
 import { Button, Box, Text, useToast } from '@chakra-ui/react'
-import { useGetAppointmentsQuery } from '../appointmentApiSlice'
-import { useUpdateAppointmentMutation } from '../appointmentApiSlice'
+import { useGetAppointmentsQuery, useUpdateAppointmentMutation } from '../appointmentApiSlice'
 import type { Appointment } from '../types'
 
 export const CalendarView: React.FC<{ onAppointmentSelect?: (appointment: Appointment) => void }> = ({ onAppointmentSelect }) => {
