@@ -13,7 +13,7 @@ import {
   VStack,
   Text,
 } from '@chakra-ui/react'
-import { useCreateAppointmentMutation, useUpdateAppointmentMutation } from '../appointmentApiSlice'
+import { useCreateAppointmentMutation, useGetAppointmentsQuery, useUpdateAppointmentMutation } from '../appointmentApiSlice'
 import type { Appointment, AppointmentCreateDto } from '../types'
 
 const schema = z.object({
@@ -35,7 +35,10 @@ type CreateAppointmentFormProps = {
 export const CreateAppointmentForm: React.FC<CreateAppointmentFormProps> = ({ appointment, onDone }) => {
   const [create, { isLoading: isCreating }] = useCreateAppointmentMutation()
   const [updateAppointment, { isLoading: isUpdating }] = useUpdateAppointmentMutation()
+  const { data: existingAppointments } = useGetAppointmentsQuery({})
   const toast = useToast()
+
+  const getAppointmentMinute = (date: Date) => Math.floor(date.getTime() / 60000)
 
   const {
     register,
@@ -81,6 +84,24 @@ export const CreateAppointmentForm: React.FC<CreateAppointmentFormProps> = ({ ap
       }
 
       const start = startDateTime.toISOString()
+      const newAppointmentMinute = getAppointmentMinute(startDateTime)
+      const existingAppointmentAtSameMinute = existingAppointments?.some((existing) => {
+        if (existing.isCancelled) return false
+        const existingDate = new Date(existing.appointmentDate)
+        return getAppointmentMinute(existingDate) === newAppointmentMinute
+      }) ?? false
+
+      if (existingAppointmentAtSameMinute) {
+        toast({
+          title: 'Duplicate appointment',
+          description: 'An appointment already exists at this date and time.',
+          status: 'error',
+          duration: 3000,
+          isClosable: true,
+        })
+        return
+      }
+
       const dto: AppointmentCreateDto = {
         patientName: values.patientName,
         AppointmentDate: start,
