@@ -53,6 +53,12 @@ La aplicación consume la API del proyecto Appointment System Backend.
 * Consulta de disponibilidad a traves del calendario
 * Programación de citas y cancelcion de turnos.
 
+* Próximas mejoras
+Login
+Validaciones avanzadas.
+Relacion medicos y paciente
+Una vez obtenido los turnos poder ingresar unos minutos antes para la videollamada
+
 ## Autor
 
 Jesica Fraile
